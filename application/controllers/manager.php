@@ -77,11 +77,12 @@ class Manager extends CI_Controller {
 					// All checks out, prepare the password
 					// Function preparePassword() is in helpers/encryption_helper.php
 					$sitename = $this->input->post('sitename');
-					$username = $this->encrypt->encode($this->input->post('username'),$this->settings_model->generateMasterKey(preparePassword($this->input->post('master'))));
-					$password = $this->encrypt->encode($this->input->post('password'),$this->settings_model->generateMasterKey(preparePassword($this->input->post('master'))));
+					$username = $this->encrypt->encode($this->input->post('username'),$this->settings_model->generateMasterKey(preparePassword($this->input->post('master')).$this->config->item('password_salt')));
+					$password = $this->encrypt->encode($this->input->post('password'),$this->settings_model->generateMasterKey(preparePassword($this->input->post('master')).$this->config->item('password_salt')));
 					$category = $this->input->post('category');
 					
 					$this->password_model->addPassword($sitename,$username,$password,$category);
+					
 					
 					redirect('/manager/passwords/');
 				}
@@ -116,8 +117,9 @@ class Manager extends CI_Controller {
 			{
 				$pass = $this->password_model->getPassword($id);
 				
-				$username = $this->encrypt->decode($pass->Username,$this->settings_model->generateMasterKey($this->settings_model->getMasterPassword()));
-				$password = $this->encrypt->decode($pass->Password,$this->settings_model->generateMasterKey($this->settings_model->getMasterPassword()));
+				$username = $this->encrypt->decode($pass->Username,$this->settings_model->generateMasterKey($this->settings_model->getMasterPassword().$this->config->item('password_salt')));
+				$password = $this->encrypt->decode($pass->Password,$this->settings_model->generateMasterKey($this->settings_model->getMasterPassword().$this->config->item('password_salt')));
+				
 				
 				$details = array(
 					'username'=>$username,
@@ -219,12 +221,12 @@ class Manager extends CI_Controller {
 					foreach ($passwords as $p)
 					{
 						// Decode ...
-						$username = $this->encrypt->decode($p->Username,$this->settings_model->generateMasterKey($master_old));
-						$password = $this->encrypt->decode($p->Password,$this->settings_model->generateMasterKey($master_old));
+						$username = $this->encrypt->decode($p->Username,$this->settings_model->generateMasterKey($master_old.$this->config->item('password_salt')));
+						$password = $this->encrypt->decode($p->Password,$this->settings_model->generateMasterKey($master_old.$this->config->item('password_salt')));
 						
 						// ... and re-encode!
-						$username = $this->encrypt->encode($username,$this->settings_model->generateMasterKey(preparePassword($master_new)));
-						$password = $this->encrypt->encode($password,$this->settings_model->generateMasterKey(preparePassword($master_new)));
+						$username = $this->encrypt->encode($username,$this->settings_model->generateMasterKey(preparePassword($master_new.$this->config->item('password_salt'))));
+						$password = $this->encrypt->encode($password,$this->settings_model->generateMasterKey(preparePassword($master_new.$this->config->item('password_salt'))));
 						
 						$data = array(
 							'Username' => $username,
@@ -344,7 +346,7 @@ class Manager extends CI_Controller {
 		// Check if the master password is entered correctly
 		$master = $this->settings_model->getMasterPassword();
 		
-		if (sha1($pass.$this->config->item('password_salt'))==$master)
+		if (sha1($pass)==$master)
 		{
 			return true;
 		}

@@ -33,11 +33,7 @@ function pbkdf2( $p, $c, $kl, $a = 'sha256' )
 
 function preparePassword($pass)
 {
-	// Simple hashing of a password, with salt
-	$CI = &get_instance();
-	$s = $CI->config->item('password_salt');
-	
-	return sha1($pass.$s);
+	return sha1($pass);
 	
 } // End of function preparePassword
 
