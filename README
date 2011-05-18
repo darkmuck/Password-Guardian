@@ -1,0 +1,6 @@
+Password Guardian is a secure PHP password manager.
+
+It stores all your data fully encyrpted. It's recommended to use this on an SSL-enabled host for maximum security.
+
+Installation instructions:
+- TODO
