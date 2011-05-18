@@ -2,5 +2,17 @@ Password Guardian is a secure PHP password manager.
 
 It stores all your data fully encyrpted. It's recommended to use this on an SSL-enabled host for maximum security.
 
+Warning: This software is in pre-alpha stage. Everything should work as expected, but bugs/vulnurabilities/etc are quite possible. Pull requests are welcome.
+
 Installation instructions:
 - TODO
+
+Upcoming features:
+- Setup script (Almost done)
+- i18n (No ETA)
+- CSV export (NO ETA)
+- Password generator (Almost done)
+
+For feature requests, please open a new issue on Github.
+
+Enjoy :)
