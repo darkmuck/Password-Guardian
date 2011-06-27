@@ -4,15 +4,26 @@ It stores all your data fully encyrpted. It's recommended to use this on an SSL-
 
 Warning: This software is in pre-alpha stage. Everything should work as expected, but bugs/vulnurabilities/etc are quite possible. Pull requests are welcome.
 
-Installation instructions:
-- TODO
+Quick installation instructions:
+- Import db.sql to MySQL
+- Insert the following to the "settings" table:
+  - Key: UserName, Value: <your username>
+  - Key: UserPassword, Value: sha1sum(<your password>)
+  - Key: MasterPassword, Value sha1sum(<master password for encryption>)
+
+- Edit application/config/config.php
+  - Set $config['base_url']
+  - Set $config['password_salt'] (at the very bottom)
+
+That's it :) Usage should be pretty self explanatory.
 
 Upcoming features:
 - Setup script (Almost done)
 - i18n (No ETA)
 - CSV export (NO ETA)
 - Password generator (Almost done)
+- An actual theme! (WIP)
 
 For feature requests, please open a new issue on Github.
 
-Enjoy :)
+Enjoy :)
