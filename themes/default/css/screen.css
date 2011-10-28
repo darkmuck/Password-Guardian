@@ -196,11 +196,13 @@ body
 	padding:5px;
 	font-size:14px;
 	font-weight:bold;
+	clear:both;
 }
 
 #content form input[type=text], #content form input[type=password], #content form select
 {
 	width:200px;
+	height:20px;
 	padding:5px;
 	font-size:14px;
 	border:1px solid #E0DCDB;
@@ -221,6 +223,7 @@ body
 #content form select
 {
 	width:212px;
+	height:30px;
 }
 
 #content .message
