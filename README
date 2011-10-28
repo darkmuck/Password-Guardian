@@ -15,6 +15,9 @@ Quick installation instructions:
   - Set $config['base_url']
   - Set $config['password_salt'] (at the very bottom)
 
+- If you are not using Apache, make sure to you are passing all reuqests
+  directly to index.php
+
 That's it :) Usage should be pretty self explanatory.
 
 Upcoming features:
