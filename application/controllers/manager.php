@@ -206,7 +206,7 @@ class Manager extends CI_Controller {
 				// Let's check if the old password matches up
 				//
 				// To do this, we get the sha1 sum'ed master password from the db,
-				// Then get the old master password the user entered and sha1 sum it (with salt),
+				// Then get the old master password the user entered and sha1 sum it,
 				// And finally, compare these
 				if (preparePassword($this->input->post('master_old')) == $this->settings_model->getMasterPassword())
 				{
@@ -225,8 +225,8 @@ class Manager extends CI_Controller {
 						$password = $this->encrypt->decode($p->Password,$this->settings_model->generateMasterKey($master_old.$this->config->item('password_salt')));
 						
 						// ... and re-encode!
-						$username = $this->encrypt->encode($username,$this->settings_model->generateMasterKey(preparePassword($master_new.$this->config->item('password_salt'))));
-						$password = $this->encrypt->encode($password,$this->settings_model->generateMasterKey(preparePassword($master_new.$this->config->item('password_salt'))));
+						$username = $this->encrypt->encode($username,$this->settings_model->generateMasterKey(preparePassword($master_new).$this->config->item('password_salt')));
+						$password = $this->encrypt->encode($password,$this->settings_model->generateMasterKey(preparePassword($master_new).$this->config->item('password_salt')));
 						
 						$data = array(
 							'Username' => $username,
