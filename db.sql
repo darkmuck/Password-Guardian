@@ -13,6 +13,13 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `Name` text NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+INSERT INTO `pg`.`categories` (
+`ID` ,
+`Name`
+)
+VALUES (
+'1', 'Default'
+);
 
 -- --------------------------------------------------------
 
@@ -43,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `passwords` (
   `BelongsToCategory` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
+ALTER TABLE `passwords` CHANGE `BelongsToCategory` `BelongsToCategory` INT( 11 ) NOT NULL DEFAULT '1'
 -- --------------------------------------------------------
 
 --
