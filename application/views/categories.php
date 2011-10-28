@@ -3,9 +3,7 @@
 	<div id="content">
 		
 		
-		
 		<?php
-					
 		//Show any messages
 		if($this->session->flashdata('message'))
 		{
@@ -16,7 +14,7 @@
 		
 		
 		<?php
-			if ($allCategories)
+			if (isset($allCategories))
 			{
 				$mark = array('odd','even');
 				$i = 0;
