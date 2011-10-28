@@ -24,13 +24,13 @@
 			<input type="text" name="username" id="username" value="<?php echo set_value('username'); ?>" />
 			
 			<label for="password">Password</label>
-			<input type="text" name="password" id="password" value="<?php echo set_value('password'); ?>" />
+			<input type="password" name="password" id="password" value="<?php echo set_value('password'); ?>" />
 			
 			<label for="password2">Repeat Password</label>
-			<input type="text" name="password2" id="password2" value="<?php echo set_value('password2'); ?>" />
+			<input type="password" name="password2" id="password2" value="<?php echo set_value('password2'); ?>" />
 			
 			<label for="master">Master Password</label>
-			<input type="text" name="master" id="master" value="<?php echo set_value('master'); ?>" />
+			<input type="password" name="master" id="master" value="<?php echo set_value('master'); ?>" />
 			
 			<label for="category">Category</label>
 			<select name="category">

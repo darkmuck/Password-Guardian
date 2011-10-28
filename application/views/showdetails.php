@@ -23,7 +23,7 @@
 		<fieldset>
 			<legend>Unlock Details</legend>
 			<label for="master">Master Password</label>
-			<input type="text" name="master" id="master" />
+			<input type="password" name="master" id="master" />
 		</fieldset>
 		<fieldset>
 			<input type="submit" value="Submit" />
