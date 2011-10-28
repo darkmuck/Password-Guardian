@@ -3,6 +3,7 @@ SET time_zone = "+00:00";
 
 CREATE DATABASE IF NOT EXISTS pg;
 USE pg;
+
 --
 -- Table structure for table `categories`
 --
