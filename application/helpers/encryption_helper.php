@@ -46,6 +46,19 @@ function generateKey($pass)
 	
 } // End of function generateKey
 
+function randomPassword($length = 8) {
+	// Generates a random password.
+	// TODO: Improve this!
+	
+	$alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    $pass = array(); //remember to declare $pass as an array
+    for ($i = 0; $i < $length; $i++) {
+        $n = rand(0, strlen($alphabet)-1); //use strlen instead of count
+        $pass[$i] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+
+}
 
 /* End of file encryption_helper.php */
 /* Location: ./application/helpers/encryption_helper.php */
