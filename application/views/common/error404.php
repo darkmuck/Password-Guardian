@@ -1,4 +1,4 @@
-<?php $this->load->view('header'); ?>
+<?php $this->load->view('common/header'); ?>
 
 	<div id="content">
 		This page doesn't exist. Try going to the <a href="<?php echo site_url(); ?>">main page</a><?php
@@ -8,4 +8,4 @@
 		?>
 		
 	</div>
-<?php $this->load->view('footer');?>
+<?php $this->load->view('common/footer');?>

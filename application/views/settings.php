@@ -1,5 +1,5 @@
-<?php $this->load->view('header'); ?>
-<?php $this->load->view('navigation');?>
+<?php $this->load->view('common/header'); ?>
+<?php $this->load->view('common/navigation');?>
 	<div id="content">
 		<?php
 					
@@ -83,5 +83,5 @@
 			</form>
 		</div>
 	</div>
-<?php $this->load->view('footer');?>
+<?php $this->load->view('common/footer');?>
 

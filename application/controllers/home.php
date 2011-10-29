@@ -94,7 +94,7 @@ class Home extends CI_Controller {
 	{
 		$this->outputData['page_title'] = 'Page Not Found';
 		
-		$this->load->view('error404',$this->outputData);
+		$this->load->view('common/error404',$this->outputData);
 		
 	} // End of function error404
 }
