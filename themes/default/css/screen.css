@@ -40,59 +40,6 @@ body
 }
 
 
-/* LOGIN AREA */
-
-#login
-{
-	margin:0 auto;
-	width:450px;
-	text-align:center;
-}
-
-#login form fieldset.login
-{
-	float:left;
-	margin:0px 5px 0px 5px;
-}
-
-#login form fieldset.submit
-{
-	padding-top:20px;
-	display:block;
-	clear:both;
-}
-
-#login form label
-{
-	display:block;
-	width:200px;
-	text-align:center;
-	background-color:#6D9B43;
-	color:#FFFFFF;
-	padding:5px;
-	font-size:14px;
-	font-weight:bold;
-}
-
-#login form input[type=text], #login form input[type=password]
-{
-	width:198px;
-	padding:5px;
-	font-size:14px;
-	border:1px solid #E0DCDB;
-}
-
-#login form input[type=submit]
-{
-	border:none;
-	width:100px;
-	background-color:#6D9B43;
-	color:#FFFFFF;
-	padding:5px;
-	font-size:14px;
-	font-weight:bold;
-}
-
 /* NAVIGATION */
 
 #navigation

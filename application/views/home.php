@@ -10,15 +10,23 @@
 		}
 		?>
 		
-		<div id="login">
+		<div class="frm-wrp">
 			<form action="" method="post">
-				<fieldset class="login">
-					<label for="username">Username</label>
-					<input type="text" name="username" id="username" />
+				<fieldset>
+					<div class="form-level">
+						<div class="inputs">
+							<label for="username">Username</label>
+							<input type="text" name="username" id="username" />
+						</div>
+					</div>
 				</fieldset>
-				<fieldset class="login">
-					<label for="password">Password</label>
-					<input type="password" name="password" id="password" />
+				<fieldset>
+					<div class="form-level">
+						<div class="inputs">
+							<label for="password">Password</label>
+							<input type="password" name="password" id="password" />
+						</div>
+					</div>
 				</fieldset>
 				<fieldset class="submit">
 					<input type="submit" name="submit" value="Login" />
