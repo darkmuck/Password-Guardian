@@ -61,8 +61,8 @@ class Manager extends CI_Controller {
 				////////////////////////////////////////////////////////////////////
 				$this->form_validation->set_rules('sitename', 'Site Name', 'required');
 				$this->form_validation->set_rules('username', 'Username', 'required');
-				$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|matches[password2]');
-				$this->form_validation->set_rules('password2', 'Repeat Password', 'required|min_length[5]');
+				$this->form_validation->set_rules('password', 'Password', 'required|matches[password2]');
+				$this->form_validation->set_rules('password2', 'Repeat Password', 'required');
 				$this->form_validation->set_rules('master', 'Master Password', 'required|callback__masterCheck');
 				
 				
@@ -155,8 +155,8 @@ class Manager extends CI_Controller {
 			// Login update form
 		
 			$this->form_validation->set_rules('pass_old', 'Old Password', 'required');
-			$this->form_validation->set_rules('pass_new', 'New Password', 'required|min_length[5]|matches[pass_new2]');
-			$this->form_validation->set_rules('pass_new2', 'New Password (again)', 'required|min_length[5]');
+			$this->form_validation->set_rules('pass_new', 'New Password', 'required|matches[pass_new2]');
+			$this->form_validation->set_rules('pass_new2', 'New Password (again)', 'required');
 			
 			if (!$this->form_validation->run())
 			{
