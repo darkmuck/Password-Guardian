@@ -118,6 +118,18 @@ body
 {
 	background-color:#292929;
 }
+#navigation a.image
+{
+	cursor:pointer;
+	border:none;
+	background-color:transparent ;
+
+}
+
+#navigation a.image:hover
+{
+	background-color:transparent ;
+}
 
 /* CONTENT */
 #content
@@ -146,84 +158,91 @@ body
 {
 	color:#FFFFFF;
 }
-
-#content form
+.frm-wrp
 {
-	text-align:center;
-}
-
-#content form.centered
-{
- margin:0 auto;
- width:392px;
-}
-
-#content form fieldset
-{
-	padding:10px;
-}
-
-#content form legend
-{
-	width:361px;
-	text-align:center;
-	padding:5px;
-	font-size:16px;
-	background-color:#EC8827;
-	color:#FFFFFF;
-	
-}
-#content form p
-{
-	width:361px;
-	margin:0px 0px 5px 0px;
-	text-align:center;
-	padding:5px;
+	width:450px;
+	margin:0 auto;
 	font-size:14px;
-	font-style:italic;
 }
-
-#content form label
+.frm-wrp legend
 {
-	display:block;
-	width:150px;
-	height:20px;
-	line-height:20px;
-	float:left;
-	text-align:center;
-	background-color:#6D9B43;
-	color:#FFFFFF;
-	padding:5px;
-	font-size:14px;
+	font-size:18px;
 	font-weight:bold;
+	padding:0 0 10px 0;
+	width:100%;
+	text-align:center;
+
+}
+
+.form-level
+{
 	clear:both;
 }
+.inputs
+{
+	width:380px;
+	float:left;
+	margin:0 0 5px 0;
+}
 
-#content form input[type=text], #content form input[type=password], #content form select
+.inputs label
+{
+	display:block;
+	float:left;
+	width:150px;
+	line-height:30px;
+	text-align:right;
+	padding:0 10px 0 0;
+	
+}
+
+.inputs input, .inputs select
 {
 	width:200px;
 	height:20px;
 	padding:5px;
-	font-size:14px;
 	border:1px solid #E0DCDB;
 	background-color:#FFFFFF;
+	border-radius:5px;
+	-moz-border-radius:5px;
 }
 
-#content form input[type=submit]
-{
-	border:none;
-	width:100px;
-	background-color:#6D9B43;
-	color:#FFFFFF;
-	padding:5px;
-	font-size:14px;
-	font-weight:bold;
-}
-
-#content form select
+.inputs select
 {
 	width:212px;
 	height:30px;
+	padding:5px;
+	border:1px solid #E0DCDB;
+	background-color:#FFFFFF;
+	border-radius:5px;
+	-moz-border-radius:5px;
+}
+fieldset.submit {
+	position: relative;
+}
+
+fieldset.submit input{
+	position:absolute;
+	right:78px;
+	width:100px;
+	height:30px;
+	border:none;
+	color:#FFFFFF;
+	background-color:#6D9B43;
+	border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+.actions {
+	float:left;
+	width:30px;
+	height:30px;
+}
+.actions img
+{
+	position:relative;
+	top:10%;
+	cursor:pointer;
 }
 
 #content .message
@@ -307,16 +326,16 @@ body
 /* MISC */
 .left
 {
-	float:left;
+	float:left !important;
 }
 .right
 {
-	float:right;
+	float:right !important;
 }
 .center
 {
-	text-align:center;
-	margin:0 auto;
+	text-align:center !important;
+	margin:0 auto !important;
 }
 .full
 {
