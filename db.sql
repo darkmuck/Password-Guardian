@@ -1,8 +1,8 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-CREATE DATABASE IF NOT EXISTS pg;
-USE pg;
+CREATE DATABASE IF NOT EXISTS passwordguardian;
+USE passwordguardian;
 
 --
 -- Table structure for table `categories`
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `Name` text NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-INSERT INTO `pg`.`categories` (
+INSERT INTO `categories` (
 `ID` ,
 `Name`
 )
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `passwords` (
   `BelongsToCategory` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-ALTER TABLE `passwords` CHANGE `BelongsToCategory` `BelongsToCategory` INT( 11 ) NOT NULL DEFAULT '1'
+ALTER TABLE `passwords` CHANGE `BelongsToCategory` `BelongsToCategory` INT( 11 ) NOT NULL DEFAULT '1';
 -- --------------------------------------------------------
 
 --
