@@ -20,13 +20,13 @@
 		<?php
 		if (isset($passwords))
 		{
-			echo '<table><th>Website</th><th class="w150">Category</th><th class="w230 center">Action</th>';
+			echo '<table><th>Website</th><th class="w150">Category</th><th class="w235 center">Action</th>';
 			
 			$mark = array('odd','even');
 			$i = 0;
 			foreach ($passwords as $pass)
 			{
-				echo '<tr class="'.$mark[$i].'"><td>'.$pass->Location.'</td><td>'.$pass->CategoryName.'</td><td class="center"><a class="wide" href="'.site_url().'manager/passwords/show/'.$pass->ID.'">Show Details</a> <a class="wide" href="'.site_url().'manager/passwords/delete/'.$pass->ID.'">Delete</a></td></tr>';
+				echo '<tr class="'.$mark[$i].'"><td>'.$pass->Location.'</td><td>'.$pass->CategoryName.'</td><td class="center"><a href="'.site_url().'manager/passwords/show/'.$pass->ID.'">Show Details</a> <a href="'.site_url().'manager/passwords/delete/'.$pass->ID.'">Delete</a></td></tr>';
 				$i = 1 - $i;
 			}
 			
