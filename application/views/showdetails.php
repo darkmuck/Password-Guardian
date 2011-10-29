@@ -19,16 +19,27 @@
 		{
 			// Show unlock form
 		?>
-		<form action="" method="post" class="centered">
-		<fieldset>
-			<legend>Unlock Details</legend>
-			<label for="master">Master Password</label>
-			<input type="password" name="master" id="master" />
-		</fieldset>
-		<fieldset>
-			<input type="submit" value="Submit" />
-		</fieldset>
-		</form>
+		
+		<div class="frm-wrp">
+			<form action="" method="post" class="centered">
+			<fieldset>
+				<legend>Unlock Details</legend>
+				
+				<div class="form-level">
+					<div class="inputs">
+						<label for="master">Master Password</label>
+						<input type="password" name="master" id="master" />
+					</div>
+					<div class="actions">
+					</div>
+				</div>
+			</fieldset>
+			
+			<fieldset class="submit">
+				<input type="submit" value="Submit" />
+			</fieldset>
+			</form>
+		</div>
 		
 		<?php
 		
