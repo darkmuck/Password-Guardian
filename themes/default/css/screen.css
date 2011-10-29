@@ -160,7 +160,7 @@ body
 }
 .frm-wrp
 {
-	width:450px;
+	width:430px;
 	margin:0 auto;
 	font-size:14px;
 }
@@ -178,7 +178,7 @@ body
 {
 	clear:both;
 }
-.inputs
+.inputs, .frm-wrp p
 {
 	width:380px;
 	float:left;
@@ -218,12 +218,12 @@ body
 	-moz-border-radius:5px;
 }
 fieldset.submit {
-	position: relative;
+	clear:both;
+	width:372px;
+	text-align:right;
 }
 
 fieldset.submit input{
-	position:absolute;
-	right:78px;
 	width:100px;
 	height:30px;
 	border:none;
