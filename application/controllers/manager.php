@@ -52,7 +52,7 @@ class Manager extends CI_Controller {
 				unset($this->outputData['passwords']);
 			
 			$this->outputData['page_title'] = 'Passwords';
-			$this->load->view('passwords',$this->outputData);
+			$this->load->view('passwords/passwords',$this->outputData);
 		}
 		elseif ($sublink == 'add')
 		{
@@ -70,7 +70,7 @@ class Manager extends CI_Controller {
 				{
 					$this->outputData['categories'] = $this->categories_model->getAllCategories();
 					$this->outputData['page_title'] = 'Add New Password';
-					$this->load->view('newpassword',$this->outputData);
+					$this->load->view('passwords/new',$this->outputData);
 				}
 				else
 				{
@@ -92,7 +92,7 @@ class Manager extends CI_Controller {
 			{
 				$this->outputData['categories'] = $this->categories_model->getAllCategories();
 				$this->outputData['page_title'] = 'Add New Password';
-				$this->load->view('newpassword',$this->outputData);
+				$this->load->view('passwords/new',$this->outputData);
 			}
 
 		}
@@ -111,7 +111,7 @@ class Manager extends CI_Controller {
 			if (!$this->form_validation->run())
 			{
 				$this->outputData['page_title'] = 'Show Details';
-				$this->load->view('showdetails',$this->outputData);
+				$this->load->view('passwords/details',$this->outputData);
 			}
 			else
 			{
@@ -130,7 +130,7 @@ class Manager extends CI_Controller {
 				
 				$this->outputData['details'] = $details;
 				$this->outputData['page_title'] = 'Show Details';
-				$this->load->view('showdetails',$this->outputData);
+				$this->load->view('passwords/details',$this->outputData);
 				
 			}			
 			
@@ -284,7 +284,7 @@ class Manager extends CI_Controller {
 				unset($this->outputData['allCategories']);
 			
 			$this->outputData['page_title'] = 'Categories';
-			$this->load->view('categories',$this->outputData);
+			$this->load->view('categories/categories',$this->outputData);
 		}
 		elseif ($sublink == 'add')
 		{
@@ -293,7 +293,7 @@ class Manager extends CI_Controller {
 			if (!$this->form_validation->run())
 			{
 				$this->outputData['page_title'] = 'New Category';
-				$this->load->view('category_new',$this->outputData);
+				$this->load->view('categories/new',$this->outputData);
 			}
 			else
 			{
@@ -319,7 +319,7 @@ class Manager extends CI_Controller {
 			{
 				$this->outputData['category'] = $this->categories_model->getCategory($id);
 				$this->outputData['page_title'] = 'Edit Category';
-				$this->load->view('category_edit',$this->outputData);
+				$this->load->view('categories/edit',$this->outputData);
 			}
 			else
 			{
