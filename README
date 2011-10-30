@@ -33,6 +33,7 @@ Upcoming features:
 - i18n (No ETA)
 - CSV export (NO ETA)
 - An actual theme! (WIP)
+- Full CSRF protection (WIP)
 
 For feature requests, please open a new issue on Github.
 
