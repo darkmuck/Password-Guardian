@@ -74,7 +74,7 @@ class Manager extends CI_Controller {
 				}
 				else
 				{
-					// All checks out, prepare the password
+					// All checks out, prepare and add the password
 					// Function preparePassword() is in helpers/encryption_helper.php
 					$sitename = $this->input->post('sitename');
 					$username = $this->encrypt->encode($this->input->post('username'),$this->settings_model->generateMasterKey(preparePassword($this->input->post('master')).$this->config->item('password_salt')));
@@ -82,7 +82,6 @@ class Manager extends CI_Controller {
 					$category = $this->input->post('category');
 					
 					$this->password_model->addPassword($sitename,$username,$password,$category);
-					
 					
 					redirect('/manager/passwords/');
 				}
@@ -115,17 +114,14 @@ class Manager extends CI_Controller {
 			}
 			else
 			{
-				$pass = $this->password_model->getPassword($id);
-				
-				$username = $this->encrypt->decode($pass->Username,$this->settings_model->generateMasterKey($this->settings_model->getMasterPassword().$this->config->item('password_salt')));
-				$password = $this->encrypt->decode($pass->Password,$this->settings_model->generateMasterKey($this->settings_model->getMasterPassword().$this->config->item('password_salt')));
-				
+				$masterkey = $this->settings_model->generateMasterKey($this->settings_model->getMasterPassword().$this->config->item('password_salt'));
+				$pass = $this->password_model->getPassword($id,$masterkey);
 				
 				$details = array(
-					'username'=>$username,
-					'password'=>$password,
-					'location'=>$pass->Location,
-					'category'=>$pass->CategoryName
+					'username'=>$pass[0],
+					'password'=>$pass[1],
+					'location'=>$pass[2],
+					'category'=>$pass[3],
 				);
 				
 				$this->outputData['details'] = $details;

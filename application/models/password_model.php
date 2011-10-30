@@ -33,14 +33,19 @@ class Password_model extends CI_Model {
 		return $pass->result();
 	} // End of function getAllPasswords
     
-    function getPassword($id)
+    function getPassword($id,$masterkey)
     {
 		$this->db->where(array('passwords.ID'=>$id));
 		$this->db->select('passwords.*, categories.Name as CategoryName');
 		$this->db->join('categories','categories.id = passwords.BelongsToCategory');
 		$this->db->from('passwords');
 		
-		return $this->db->get()->row();
+		$pass = $this->db->get()->row();
+		
+		$username = $this->encrypt->decode($pass->Username,$masterkey);
+		$password = $this->encrypt->decode($pass->Password,$masterkey);
+		
+		return array($username, $password, $pass->Location, $pass->CategoryName);
 		
 	} // End of function getPassword
 	
